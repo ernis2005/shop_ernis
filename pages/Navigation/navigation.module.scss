@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Nunito+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kenia&family=Mulish:wght@300&family=Nunito+Sans:wght@200&family=Open+Sans:ital,wght@1,300&display=swap');
+.header {
+    display: block;
+    margin: auto;
+    max-width: 1500px;
+    overflow: hidden;
+    justify-content: center;
+    .menu {
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;
+      .Basket{
+        margin-top: 45px;
+        display: flex;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+      .Links{
+            display: flex;
+            margin-top: 55px;
+            .Link{
+                margin-left: 20px;
+                font-family: 'Mulish', sans-serif;
+                &:hover{
+               border-bottom: solid 1px #333;
+                }
+            }
+      }
+
+      .logo_img_imge {
+        height: 150px;
+        width: 150px;
+      }
+    }
+  }
+
+  .Burger{
+    display: none;
+    margin-top: -10000px;
+  }
+  .bbtn {
+    display: none;
+  
+    position: fixed;
+    transition: 1s;
+    background-color: black;
+  }
+  .btn {
+    backdrop-filter: blur(10px);
+   width: 100%;
+  position: absolute;
+  z-index: 1000;
+    margin: 0;
+  height: 100%;
+position: fixed;
+    justify-content: center;
+    animation: ernis 0.5s;
+   .Burger_menu{
+    display: flex;
+    justify-content: center;
+    .aa{
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-left: 10px;
+      margin-top: 100px;
+      position: absolute;
+      .Linkss{
+        font-size: 20px;
+        margin-top: 10px;
+        font-family: 'Kenia', cursive;
+        font-family: 'Mulish', sans-serif;
+        font-family: 'Nunito Sans', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        &:hover{
+          color: red;
+        }
+      }
+    }
+   }
+  
+  }
+  .MenuOpenIcon{
+    text-align: right;
+    margin-right: -300px;
+  }
+
+  @media screen and (max-width:568px ) {
+    .Burger{
+    
+    font-weight: 50;height: 50px;
+      margin-top: 0px;
+      display: block;
+    }
+  
+    .Link{
+      display: none;
+    }
+  }
