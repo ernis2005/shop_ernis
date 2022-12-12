@@ -71,9 +71,9 @@ function Navigation({ children }) {
           <div className={styles.Basket}>
             <IconButton aria-label="cart">
               <StyledBadge badgeContent={mapindex} color="secondary">
-                <a className={styles.Linka} href="/Basket">
+                <Link className={styles.Linka} href="/Basket">
                   <ShoppingCartIcon />
-                </a>
+                </Link>
               </StyledBadge>
             </IconButton>
           </div>
