@@ -34,7 +34,7 @@ setInterval(() => {
   };
   return (
     <div className={s.Basket}>
-<a href="/">назарть</a>
+<Link href="/">назарть</Link>
       <div className={s.info}>
       
       <div className={s.price_ww}>
