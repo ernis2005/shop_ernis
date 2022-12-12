@@ -13,20 +13,14 @@ function Basket() {
   returnFormData = [{ name: "none" }];
   return <> <div className={s.loader}></div> </>
 }
-
-
   function nadlePrice (){
     let ans = 0;
     returnFormData.map((item) => (ans += item.attributes.price_1));
     setPrice(ans);
-  
   };
 setInterval(() => {
   nadlePrice()
 }, 1000);
-
-
-
   let removv = (remov) => {
     localStorage.removeItem("mester", [{ remov }]);
     setReturnFormData();

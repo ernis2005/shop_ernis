@@ -15,7 +15,7 @@ function Stac({data}) {
   return (
     <div> <Stack className={s.Stack}>
     <Autocomplete
-      id={data.id}
+      id={data}
       getOptionLabel={(data) => `${data.attributes.name} `}
       options={data}
       isOptionEqualToValue={(option, value) => option.name === value.name}
