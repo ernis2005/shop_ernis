@@ -1,5 +1,15 @@
 import React, { useState } from 'react'
 import s from "./puma.module.scss"
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import Link from "next/link";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+
+// import required modules
+import { Pagination,FreeMode } from "swiper";
 import axios from "axios";
 function Pumaa({data,data2}) {
   const [first, setfirst] = useState(data.attributes.img.data[0].attributes.url)
@@ -14,6 +24,8 @@ let hoverImage3=()=>{
   setfirst(data.attributes.imge_3.data[0].attributes.url)
 }
   return (
+    <>
+    
     <div className={s.idheder}>
     <div className={s.blockid}>
     <div className={s.imgs}>
@@ -48,7 +60,56 @@ let hoverImage3=()=>{
  </div>
 
     </div>
+
     </div>
+
+    <h1 className={s.puma_id}> puma</h1>
+      <Swiper
+      slidesPerView={3}
+      spaceBetween={30}
+      freeMode={true}
+      pagination={{
+        clickable: true,
+      }}
+      breakpoints={{
+        360: {
+          width: 360,
+          slidesPerView: 1,
+        },
+        768: {
+          width: 768,
+          slidesPerView: 2,
+        },
+        822:{
+          width: 1000,
+
+          slidesPerView: 3,
+        }
+      }}
+      modules={[FreeMode, Pagination]}
+      className={s.Swiper}
+      >
+{data2.map((res, i)=>{
+ return ( <SwiperSlide  key={i}>
+ <Link href={`/Puma/${res.id}`} >
+ <div className={s.SwiperSlide_div} >
+    <img src={res.attributes.img.data[0].attributes.url} alt="" />
+    <h1>
+    {res.attributes.name}
+    </h1>
+
+    </div>
+   
+                  </Link>
+   
+  </SwiperSlide>
+ )
+
+})}
+      </Swiper>
+      
+     
+      </>
    
   )
 }
