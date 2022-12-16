@@ -26,7 +26,7 @@ function Stac({data}) {
             <div>
               <h1 className={s.Autocomplete_h1}>{data.attributes.name}</h1>
             </div>
-       
+
         </Box>
         </Link>
       )}

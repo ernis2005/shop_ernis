@@ -1,5 +1,7 @@
+import axios from 'axios';
+
 import React, { useState } from 'react'
-import s from "./puma.module.scss"
+import s from "../Puma/puma.module.scss"
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Link from "next/link";
@@ -10,8 +12,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination,FreeMode } from "swiper";
-import axios from "axios";
-function Pumaa({data,data2}) {
+function Nice({data,data2}) {
   const [first, setfirst] = useState(data.attributes.img.data[0].attributes.url)
   console.log(data);
 let hoverImage1=()=>{
@@ -25,7 +26,7 @@ let hoverImage3=()=>{
 }
   return (
     <>
-    
+  
     <div className={s.idheder}>
     <div className={s.blockid}>
     <div className={s.imgs}>
@@ -83,7 +84,7 @@ let hoverImage3=()=>{
         822:{
           width: 1000,
 
-          slidesPerView: 3,
+          slidesPerView:2,
         }
       }}
       modules={[FreeMode, Pagination]}
@@ -91,7 +92,7 @@ let hoverImage3=()=>{
       >
 {data2.map((res, i)=>{
  return ( <SwiperSlide  key={i}>
- <Link href={`/Puma/${res.id}`} >
+ <Link href={`/Nike/${res.id}`} >
  <div className={s.SwiperSlide_div} >
     <img src={res.attributes.img.data[0].attributes.url} alt="" />
     <h1>
@@ -110,41 +111,40 @@ let hoverImage3=()=>{
       
      
       </>
-   
   )
 }
 
-export default Pumaa
+export default Nice
 export async function getStaticPaths() {
 
-    const res = await axios.get(
-      "https://stupendous-string-production.up.railway.app/api/pumas?populate=*"
-    );
-    let paths = res.data.data.map((res) => {
-      return {
-        params: { id: String(res.id) },
-      };
-    });
+  const res = await axios.get(
+    "https://stupendous-string-production.up.railway.app/api/nikes?populate=*"
+  );
+  let paths = res.data.data.map((res) => {
     return {
-      paths,
-      fallback: false,
+      params: { id: String(res.id) },
     };
-  }
+  });
+  return {
+    paths,
+    fallback: false,
+  };
+}
 export async function getStaticProps({ params: { id } }) {
-    const res2 = await axios.get(
-      "https://stupendous-string-production.up.railway.app/api/pumas?populate=*"
-    );
-    let data2 = res2.data.data;
-  
-    const res = await axios.get(
-      `https://stupendous-string-production.up.railway.app/api/pumas/${id}?populate=*`
-    );
-    let data = res.data.data;
-    return {
-      props: {
-        data2,
-        data,
-      },
-      revalidate: 2,
-    };
-  }
+  const res2 = await axios.get(
+    "https://stupendous-string-production.up.railway.app/api/nikes?populate=*"
+  );
+  let data2 = res2.data.data;
+
+  const res = await axios.get(
+    `https://stupendous-string-production.up.railway.app/api/nikes/${id}?populate=*`
+  );
+  let data = res.data.data;
+  return {
+    props: {
+      data2,
+      data,
+    },
+    revalidate: 2,
+  };
+}

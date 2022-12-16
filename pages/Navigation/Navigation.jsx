@@ -57,13 +57,13 @@ function Navigation({ children }) {
               <Link className={styles.Link} href="/Puma">
                 puma
               </Link>
-              <Link className={styles.Link} href="#">
+              <Link className={styles.Link} href="/Nike">
                 nike
               </Link>
-              <Link className={styles.Link} href="#">
+              <Link className={styles.Link} href="/Adidas">
                 adidas
               </Link>
-              <Link className={styles.Link} href="#">
+              <Link className={styles.Link} href="/Fila">
                 fila
               </Link>
             </div>
