@@ -64,7 +64,7 @@ let hoverImage3=()=>{
 
     </div>
 
-    <h1 className={s.puma_id}> puma</h1>
+    <h1 className={s.puma_id}> Nike</h1>
       <Swiper
       slidesPerView={3}
       spaceBetween={30}

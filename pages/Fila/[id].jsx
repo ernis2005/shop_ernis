@@ -64,7 +64,7 @@ function Filass({data,data2}) {
 
     </div>
 
-    <h1 className={s.puma_id}> puma</h1>
+    <h1 className={s.puma_id}> Fila</h1>
       <Swiper
       slidesPerView={3}
       spaceBetween={30}
@@ -92,7 +92,7 @@ function Filass({data,data2}) {
       >
 {data2.map((res, i)=>{
  return ( <SwiperSlide  key={i}>
- <Link href={`/File/${res.id}`} >
+ <Link href={`/Fila/${res.id}`} >
  <div className={s.SwiperSlide_div} >
     <img src={res.attributes.img.data[0].attributes.url} alt="" />
     <h1>

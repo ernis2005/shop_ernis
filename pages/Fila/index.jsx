@@ -64,7 +64,7 @@ function Fila({puma}) {
         options={data}
         isOptionEqualToValue={(option, value) => option.name === value.name}
         renderOption={(props, data) => (
-          <Link href={`/File/${data.id}`}>
+          <Link href={`/Fila/${data.id}`}>
           <Box component="li" {...props}>
               <div>
                 <h1 className={s.Autocomplete_h1}>{data.attributes.name}</h1>
@@ -121,7 +121,7 @@ function Fila({puma}) {
                     </p>
                   </div>
                   <button className={s.button}  >
-                    <Link href={`/File/${product.id}`} >
+                    <Link href={`/Fila/${product.id}`} >
                     подробнее
                     </Link>
                   </button>

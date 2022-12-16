@@ -59,7 +59,7 @@ function Adidasss({ data, data2 }) {
         </div>
       </div>
 
-      <h1 className={s.puma_id}> puma</h1>
+      <h1 className={s.puma_id}> Adidas</h1>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}

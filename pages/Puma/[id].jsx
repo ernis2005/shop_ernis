@@ -83,7 +83,7 @@ let hoverImage3=()=>{
         822:{
           width: 1000,
 
-          slidesPerView: 3,
+          slidesPerView: 2,
         }
       }}
       modules={[FreeMode, Pagination]}
