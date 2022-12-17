@@ -10,7 +10,7 @@ function Burger() {
     return (
         <>
         <IconButton className={s.Burger}>
-        <MenuIcon onClick={()=>setMenu(false)} className={s.Burgers}/> 
+        <MenuIcon onClick={()=>setMenu(false)} className={s.Burger}/> 
         </IconButton>
         <div  className={menu ? s.bbtn : s.btn}>
             <div className={s.Burger_menu}>
