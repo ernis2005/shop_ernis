@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
-import React, { useState } from 'react'
-import s from "../Puma/puma.module.scss"
+import React, { useState } from "react";
+import s from "../Puma/puma.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Link from "next/link";
@@ -9,114 +9,100 @@ import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 
-
 // import required modules
-import { Pagination,FreeMode } from "swiper";
-function Nice({data,data2}) {
-  const [first, setfirst] = useState(data.attributes.img.data[0].attributes.url)
+import { Pagination, FreeMode } from "swiper";
+function Nice({ data, data2 }) {
+  const [first, setfirst] = useState(
+    data.attributes.img.data[0].attributes.url
+  );
   console.log(data);
-let hoverImage1=()=>{
-  setfirst(data.attributes.img.data[0].attributes.url)
-}
-let hoverImage2=()=>{
-  setfirst(data.attributes.imge_2.data[0].attributes.url)
-}
-let hoverImage3=()=>{
-  setfirst(data.attributes.imge_3.data[0].attributes.url)
-}
+  let hoverImage1 = () => {
+    setfirst(data.attributes.img.data[0].attributes.url);
+  };
+  let hoverImage2 = () => {
+    setfirst(data.attributes.imge_2.data[0].attributes.url);
+  };
+  let hoverImage3 = () => {
+    setfirst(data.attributes.imge_3.data[0].attributes.url);
+  };
   return (
     <>
-  
-    <div className={s.idheder}>
-    <div className={s.blockid}>
-    <div className={s.imgs}>
-      <div onMouseOver={()=>hoverImage1()}>
-        <img src={data.attributes.img.data[0].attributes.url} alt="" /></div>
-      <div  onMouseOver={()=>hoverImage2()}>
-      <img src={data.attributes.imge_2.data[0].attributes.url} alt="" />
+      <div className={s.idheder}>
+        <div className={s.blockid}>
+          <div className={s.imgs}>
+            <div onMouseOver={() => hoverImage1()}>
+              <img src={data.attributes.img.data[0].attributes.url} alt="" />
+            </div>
+            <div onMouseOver={() => hoverImage2()}>
+              <img src={data.attributes.imge_2.data[0].attributes.url} alt="" />
+            </div>
+            <div onMouseOver={() => hoverImage3()}>
+              <img src={data.attributes.imge_3.data[0].attributes.url} alt="" />
+            </div>
+          </div>
+          <div className={s.imgs_info}>
+            <img src={first} alt="" />
+          </div>
+        </div>
+        <div className={s.infoid}>
+          <div>
+            <h1>{data.attributes.name}</h1>
+            <div>
+              <h2>Description</h2>
+              <p>{data.attributes.info}</p>
+              <div>
+                <h4>${data.attributes.price_1}</h4>
+                <button onClick={() => alert(" ты лох")}>Заказать</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div onMouseOver={()=>hoverImage3()}>
-      <img src={data.attributes.imge_3.data[0].attributes.url} alt="" />
-      </div>
-  </div>
-  <div className={s.imgs_info}>
-  <img src={first} alt="" />
-  </div>
-    
-
-    </div>
-    <div className={s.infoid}>
- <div>
-  <h1>{data.attributes.name}</h1>
-  <div>
-    <h2>
-    Description
-    </h2>
-    <p>{data.attributes.info}</p>
-    <div>
-      <h4>${data.attributes.price_1}</h4>
-      <button onClick={()=> alert(" ты лох")}>Заказать</button>
-    </div>
-  </div>
- </div>
-
-    </div>
-
-    </div>
-
-    <h1 className={s.puma_id}> Nike</h1>
+      <h1 className={s.puma_id}> Nike</h1>
       <Swiper
-      slidesPerView={3}
-      spaceBetween={30}
-      freeMode={true}
-      pagination={{
-        clickable: true,
-      }}
-      breakpoints={{
-        360: {
-          width: 360,
-          slidesPerView: 1,
-        },
-        768: {
-          width: 768,
-          slidesPerView: 2,
-        },
-        822:{
-          width: 1000,
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          360: {
+            width: 360,
+            slidesPerView: 1,
+          },
+          768: {
+            width: 768,
+            slidesPerView: 2,
+          },
+          822: {
+            width: 1000,
 
-          slidesPerView:2,
-        }
-      }}
-      modules={[FreeMode, Pagination]}
-      className={s.Swiper}
+            slidesPerView: 2,
+          },
+        }}
+        modules={[FreeMode, Pagination]}
+        className={s.Swiper}
       >
-{data2.map((res, i)=>{
- return ( <SwiperSlide  key={i}>
- <Link href={`/Nike/${res.id}`} >
- <div className={s.SwiperSlide_div} >
-    <img src={res.attributes.img.data[0].attributes.url} alt="" />
-    <h1>
-    {res.attributes.name}
-    </h1>
-
-    </div>
-   
-                  </Link>
-   
-  </SwiperSlide>
- )
-
-})}
+        {data2.map((res, i) => {
+          return (
+            <SwiperSlide key={i}>
+              <Link href={`/Nike/${res.id}`}>
+                <div className={s.SwiperSlide_div}>
+                  <img src={res.attributes.img.data[0].attributes.url} alt="" />
+                  <h1>{res.attributes.name}</h1>
+                </div>
+              </Link>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
-      
-     
-      </>
-  )
+    </>
+  );
 }
 
-export default Nice
+export default Nice;
 export async function getStaticPaths() {
-
   const res = await axios.get(
     "https://stupendous-string-production.up.railway.app/api/nikes?populate=*"
   );
