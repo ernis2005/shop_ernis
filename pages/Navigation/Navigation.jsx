@@ -77,7 +77,7 @@ function Navigation({ children }) {
               </StyledBadge>
             </IconButton>
           </div>
-          <Burger className={styles.Burger} />
+          <Burger className={styles.Burgera} />
         </div>
       </header>
       <div>{children}</div>
