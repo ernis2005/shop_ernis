@@ -92,11 +92,45 @@ position: fixed;
     .Burger{
     
     font-weight: 50;height: 50px;
-      margin-top: 0px;
+      margin-top: 20px;
       display: block;
     }
   
     .Link{
       display: none;
     }
+  }
+  .footer{
+    max-width: 1500px;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    border-top: 1px solid black;
+     justify-content: space-between;
+     .block1{
+      display: grid;
+      grid-template-columns: 1fr;
+      .Linksss{
+        margin-top: 10px;
+        font-size: 20px;
+      }
+     }
+     .block2{
+      display: grid;
+      grid-template-columns: 1fr;
+      p{
+        font-size: 20px;
+      }
+      div{
+        display: flex;
+        gap: 20px;
+        a{
+          font-size: 20px;
+          :hover{
+            color: red;
+            transform: scale(1.1);
+          }
+        }
+      }
+     }
   }

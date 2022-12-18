@@ -10,6 +10,10 @@ import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
+import { AiOutlineInstagram } from "react-icons/ai";
+import { TbBrandTelegram } from "react-icons/tb";
+
+import { TbBasketOff } from "react-icons/tb";
 function Navigation({ children }) {
   let [returnFormData, setReturnFormData] = useState([]);
   if (!returnFormData) {
@@ -81,9 +85,47 @@ function Navigation({ children }) {
         </div>
       </header>
       <div>{children}</div>
-      <footer></footer>
+      <footer>
+        <div className={styles.footer}>
+          <div className={styles.block1}>
+            <Link className={styles.Linksss} href="/Puma">
+              puma
+            </Link>
+            <Link className={styles.Linksss} href="/Nike">
+              nike
+            </Link>
+            <Link className={styles.Linksss} href="/Adidas">
+              adidas
+            </Link>
+            <Link className={styles.Linksss} href="/Fila">
+              fila
+            </Link>
+          </div>
+          <div className={styles.block2}>
+            <p>Cоцсети</p>
+            <div>
+              <a href="https://www.instagram.com/ernis0.0/">
+                <AiOutlineInstagram />
+              </a>
+              <a href="https://www.instagram.com/ernis0.0/">
+                <AiOutlineInstagram />
+              </a>
+              <a href="https://t.me/Ernis00">
+                <TbBrandTelegram />
+              </a>
+            </div>
+          </div>
+          <div className={styles.block3}>
+<p>
+  контакты
+</p>
+<div>
+  <p >+(966) 00000000</p>
+</div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
-
 export default Navigation;

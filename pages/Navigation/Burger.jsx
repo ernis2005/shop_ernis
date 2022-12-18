@@ -12,19 +12,22 @@ function Burger() {
         <IconButton className={s.Burger}>
         <MenuIcon onClick={()=>setMenu(false)} className={s.Burger}/> 
         </IconButton>
+
         <div  className={menu ? s.bbtn : s.btn}>
             <div className={s.Burger_menu}>
             <div className={s.aa}  >
               <Link className={s.Linkss} href="/Puma">
                 puma
               </Link>
-              <Link className={s.Linkss} href="#">
+        
+              
+              <Link className={s.Linkss} href="/Nike">
                 nike
               </Link>
-              <Link className={s.Linkss} href="#">
+              <Link className={s.Linkss} href="/Adidas">
                 adidas
               </Link>
-              <Link className={s.Linkss} href="#">
+              <Link className={s.Linkss} href="/Fila">
                 fila
               </Link>
             </div>
