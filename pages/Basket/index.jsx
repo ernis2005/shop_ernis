@@ -9,7 +9,7 @@ function Basket() {
     const Data = JSON.parse(localStorage.getItem("mester"));
     setReturnFormData(Data);
   }, []);
- let [modal,setModal] =useState(false)
+  let [modal, setModal] = useState(false);
   const [price, setPrice] = useState(1);
   if (!returnFormData) {
     returnFormData = [{ name: "none" }];
@@ -38,20 +38,53 @@ function Basket() {
 
   return (
     <div className={s.Basket}>
-      <Link href="/">назарть</Link>
+      <Link href="/"> назад</Link>
       <div className={s.info}>
         <div className={s.price_ww}>
           <p>{"$" + price} </p>
-          <button onClick={()=>setModal(()=>true)}> заказать </button>
+          <button onClick={() => setModal(() => true)}> заказать </button>
         </div>
       </div>
-{  modal  ?(
-<div className={s.modal}>
-  <div>
-<button onClick={()=>setModal(()=>false)}>х</button>
-  </div>
-</div>
-): null }
+      {modal ? (
+        <div className={s.modal}>
+          <div className={s.modal_info}>
+            <button onClick={() => setModal(() => false)}>х</button>
+            <div className={s.inputs}>
+              <form>
+                <p>Страна</p>
+                <input type="text" list="info" />
+                <datalist id="info">
+                  <option value="Кыргызстан"></option>
+                  <option value="Россия"></option>
+                </datalist>
+              </form>
+              <form>
+                <p>Горад</p>
+                <input type="text" />
+              </form>
+              <form>
+                <p>номер телефона</p>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  required
+                />
+              </form>
+              <form>
+                <p>email</p>
+                <input type="email" />
+              </form>
+            </div>
+            <div className={s.buttons}>
+            <button onClick={() => setModal(() => false)}>Назад</button>
+            <button>заказать</button>
+          </div>
+          </div>
+          
+        </div>
+      ) : null}
       <div>{returnFormData.none}</div>
       <div className="bg-white">
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 border-spacing-20">
