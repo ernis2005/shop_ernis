@@ -6,19 +6,19 @@ function Delivery () {
     const Data = JSON.parse(localStorage.getItem("delivery"));
     setData(Data);
   }, []);
-  if (!data) {
-    data = [{ name: "none" }];
-    return (
+   if (!data) {
+     data = [{ name: "none" }];
+     return (
       <>
         <div  className={s.data_1}>
          <div>
-         <p>вы ничего не заказали</p>
-         </div>
+          <p>вы ничего не заказали</p>
+          </div>
           
-        </div>
-      </>
-    );
-  }
+         </div>
+       </>
+     );
+   }
 
 
   return (
@@ -26,7 +26,7 @@ function Delivery () {
     <div className={s.blockmap}>
     {
       data.map((res,i)=> (
-     <div>
+     <div key={i}>
      <h1>{res.email}</h1>
      <p>${res.pres}</p>
     </div>
