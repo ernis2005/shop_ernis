@@ -7,3 +7,27 @@
 .hhhhhh{
   background-color: alpha($color: #000000);
 }
+.puma_info_block{
+  background-color: aqua;
+  width: 900px;
+  height: 200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+  .puma_info_block_image{
+    max-width: 500px;
+    max-height: 200px;
+    margin-top: 200px;
+    margin-top: 100px;
+    justify-content: center;
+    text-align: center;
+ 
+    
+  }
+
+}
+.button {
+  position: absolute;
+  z-index: 100;
+}

@@ -6,7 +6,7 @@ import s from "./puma.module.scss";
 import Head from "next/head";
 
 import axios from "axios";
-import Stac from "../Stack";
+
 import Link from "next/link";
 import { Autocomplete, Box, Stack, TextField } from "@mui/material";
 

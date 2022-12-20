@@ -48,13 +48,16 @@ function Navigation({ children }) {
       <header className={styles.header}>
         <div className={styles.menu}>
           <div className={styles.logo_img}>
-            <Image
-              className={styles.logo_img_imge}
-              alt="logo"
-              width={150}
-              height={150}
-              src="/ernis2.png"
-            />
+          <Link  href="/"> <Image
+
+          className={styles.logo_img_imge}
+          alt="logo"
+          width={150}
+          height={150}
+          src="/ernis2.png"
+        /></Link>
+
+           
           </div>
           <div className={styles.Links}>
             <div>
