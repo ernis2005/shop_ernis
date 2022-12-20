@@ -37,10 +37,13 @@
     }
   }
 .Burgera{
-    display: none;
+    position: absolute ;
+   
 }
 .Burger{
-  display: none;
+  display: block;
+  position: absolute;
+  margin-top: -1000px;
 }
   .bbtn {
     display: none;
@@ -90,10 +93,10 @@ position: fixed;
 
   @media screen and (max-width:568px ) {
     .Burger{
-    
     font-weight: 50;height: 50px;
       margin-top: 20px;
       display: block;
+      position: relative;
     }
   
     .Link{

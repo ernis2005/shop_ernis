@@ -13,20 +13,20 @@ function Delivery () {
     const Data = JSON.parse(localStorage.getItem("delivery"));
     setData(Data);
   }, []);
-    // if (!data) {
-    //  data = [{ name: "none" }];
+    if (!data) {
+     data = [{ name: "none" }];
      
-    //  return (
-    //   <>
-    //     <div  className={s.data_1}>
-    //      <div>
-    //       <p>вы ничего не заказали</p>
-    //       </div>
+     return (
+      <>
+        <div  className={s.data_1}>
+         <div>
+          <p>вы ничего не заказали</p>
+          </div>
           
-    //      </div>
-    //    </>
-    //  );
-    // }
+         </div>
+       </>
+     );
+    }
 
   return (
     <div className={s.block}>
