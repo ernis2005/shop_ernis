@@ -72,8 +72,8 @@ function Navigation({ children }) {
               </Link>
             </div>
           </div>
-          <Link  href="/Delivery">
-          
+          <div className={styles.info_block}>
+          <Link className={styles.info_block_linck}  href="/Delivery">
           Заказы 
           </Link>
           <div className={styles.Basket}>
@@ -87,6 +87,8 @@ function Navigation({ children }) {
               </StyledBadge>
             </IconButton>
           </div>
+          </div>
+         
          
           <Burger className={styles.Burgera} />
         </div>

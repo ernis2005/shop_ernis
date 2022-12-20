@@ -134,3 +134,11 @@ position: fixed;
       }
      }
   }
+.info_block{
+  display: flex;
+  .info_block_linck{
+   margin-top: 60px;
+   position: absolute;
+   margin-left: -100px;
+  }
+}
