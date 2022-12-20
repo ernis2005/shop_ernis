@@ -38,6 +38,7 @@
   }
 .Burgera{
     position: absolute ;
+    margin-top: -1000px;
    
 }
 .Burger{
@@ -92,6 +93,12 @@ position: fixed;
   }
 
   @media screen and (max-width:568px ) {
+    .Burgera{
+      font-weight: 50;height: 50px;
+      margin-top: 20px;
+      display: block;
+      position: relative;
+    }
     .Burger{
     font-weight: 50;height: 50px;
       margin-top: 20px;
